@@ -66,8 +66,27 @@
     border-radius: 10%;
   }
   .box1{
-   background-color: white;
-   border:2px solid black;
+    height: 300px;
+    width: 500px;
+    border:2px solid black;
+    text-align:left;
+    /* justify-content: center; */
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px ;
+    padding: 20px;
+    background-color: whitesmoke
    
     
 }
+.box1 h3{
+  color: rgb(134, 22, 22);
+}
+/* .box1 a{
+  color: blueviolet;
+} */
+/* .box1:hover{
+  box-shadow: 4px 2px 2px 5px rgb(20,15,15);
+    height: 250px;
+    width: 350px;
+} */
