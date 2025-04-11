@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nikitha Kurremla</title>
     <link rel="icon" type="image/x-icon" href="assets/images/ball.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- <link rel="stylesheet" href="assets/css/style1.css" /> -->
   </head>
   <body>
     <div class="container">
@@ -17,7 +20,6 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
-
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -47,40 +49,47 @@
           </div>
         </div>
       </div>
-
-      <div id="projects" class="row" style="background-color: lightcoral">
-        <h1>Projects</h1>
-        <div style="display: flex">
-          <div class="box1">
-             <h3>Online Store</h3>
-             <p>Online store is website.By using Website we can order the Food.</p>
-             <p>The website is Build by using HTML and CSS.</p>
-            <a href=" https://nikithakurremla.github.io/onlinestore/" target="_blank"><h3>Click Here</h3></a>
-          </div>
-
-          <div class="box1">
-            <h3>MyBank</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-              Perspiciatis, ab.
-            </p>
-            <a href=" https://nikithakurremla.github.io/MyBank/" target="_blank"><h3>Click Here</h3></a>
-          </div>
-
-          <div class="box1">
-            <h3>MyStore</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              quia nobis eligendi reiciendis. Esse a possimus eum est veritatis
-              aliquid ut eveniet. Et illum odio ut voluptates molestiae?
-              Perspiciatis, ab.
-            </p>
-            <a href="https://nikithakurremla.github.io/mystore/" target="_blank"><h3>Click Here</h3></a>
+      <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <div class="slider-container">
+          <div class="card-slider">
+            <div class="card">
+              <img src="assets/images/store1.jpg" alt="Onlinestore">
+              <h3>Onlinestore</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/onlinestore/', '_blank')">Click Here</button>
+            </div>
+            <div class="card">
+              <img src="assets/images/bank.png" alt="MyBack">
+              <h3>MyBank</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/MyBank/', '_blank')">Click Here</button>
+              </div>
+            <div class="card">
+              <img src="assets/images/store.jpg" alt="Mystore">
+              <h3>Mystore</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/mystore/', '_blank')">Click Here</button>
+            </div>
+            <div class="card">
+              <img src="assets/images/website.png" alt="webSite">
+              <h3>Website</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/website/', '_blank')">Click Here</button>
+            </div>
+            <div class="card">
+              <img src="assets/images/socialmedia.png" alt="Socialmedia">
+              <h3>Socialmedia</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/socialmedia/', '_blank')">Click Here</button>
+            </div>
+            <div class="card">
+              <img src="assets/images/raect-store.png" alt="React-store">
+              <h3>React-Store</h3>
+              <button class="custom-button" onclick="window.open(' https://nikithakurremla.github.io/react-store-a/', '_blank')">Click Here</button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      
+      
+      
+      
       <div id="services" class="row" style="background-color: lightblue">
         <h1>Services</h1>
         <div style="display: flex">
@@ -169,5 +178,39 @@
       </div>
       <div class="footer">@copyright 2024. All rights reserved.</div>
     </div>
+    <script>
+      const slider = document.querySelector('.slider-container');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2; // scroll speed
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+    </script>
+    
+    
   </body>
 </html>
